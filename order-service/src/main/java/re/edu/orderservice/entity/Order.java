@@ -15,9 +15,19 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
+    private Long customerId;
+
+    @Column(nullable = false)
+    private Long productId;
+
+    @Column(nullable = false)
+    private Integer quantity;
+
+    @Column(nullable = false)
+    private LocalDateTime orderDate;
+
+    @Column(nullable = false, precision = 12, scale = 2)
     private BigDecimal totalAmount;
-
-    private String status;
-
-    private LocalDateTime createdAt;
 }
